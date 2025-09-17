@@ -13,11 +13,22 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class ST10469706Test {
     
-    public ST10469706Test() {
-    }
-
-    @org.junit.jupiter.api.Test
-    public void testMain() {
+    UserService service = new UserService();
+    
+    @Test
+    public void testInvalidUsername() {
+        String result = service.validateUsername("hlath");
+        assertEquals("Username is not correctly formatted, please ensure that your username contains an underscore and is no more than five characters in length.", result);        
     }
     
+    @Test
+    public void testValidPassword() {
+        String result = service.validatePassword("Secure@123");
+        assertEquals("Password successfully captured.", result);
+    }
+    @Test
+    public void testInvalidPassword() {
+        String result = service.validatePassword("weakpass");
+        assertEquals("Password is not correctly formatted; please ensure that the password contains at least eight characters, a capital letter, a number, and a special character.", result);
+    }
 }
