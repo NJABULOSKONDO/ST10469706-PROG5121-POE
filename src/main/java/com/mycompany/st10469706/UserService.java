@@ -24,7 +24,7 @@ public class UserService {
         boolean longEnough = password.length() >= 8;
         
         if (hasUpper && hasDigit && hasSpecial && longEnough){
-            return "Password successfully capture.";
+            return "Password successfully captured.";
         } else {
             return "Password is not correctly formatted; please ensure that the password contains at least eight characters, a capital letter, a number, and a special character.";
         }
@@ -33,5 +33,12 @@ public class UserService {
         // You can add phone number validation here too
         return validateUsername(username).contains("successfully")&&
                 validatePassword(password).contains("successfully");
+    }
+    public String validatePhoneNumber(String phoneNumber) {
+        if (phoneNumber.matches("0\\d{9}")) {
+            return "Phone number successfully captured.";
+        } else {
+            return "Phone number is not correctly formatted; please enter a valid 10-digit South African cell number starting with 0.";
+        }
     }
 }
