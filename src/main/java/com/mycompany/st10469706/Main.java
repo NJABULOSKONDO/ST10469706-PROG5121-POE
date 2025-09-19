@@ -24,13 +24,24 @@ public class Main {
         String password = scanner.nextLine();
         System.out.println(service.validatePassword(password));
         
-        System.out.print("Enter South African number: ");
+        System.out.print("Enter phone number: ");
         String phone = scanner.nextLine();
+        System.out.println(service.validatePhoneNumber(phone));
         
         if (service.registerUser(username, password, phone)) {
             System.out.println("Registration Successful!");
-        } else {
-            System.out.println("Registration failed. Please check your inputs.");
+            System.outprintln("Login - Enter username: ");
+            String loginUser = scanner.nextLine();
+            System.out.print("Login - Enter password: ");
+            String loginPass = scanner.nextLine();
+            
+            if (loginUser.equals(username) && loginPass.equals(password)) {
+                System.out.println("Welcome Njabulo Skondo, it is greate to see yoy again.");
+            } else {
+                System.out.println("Username or password incorrect, please try again.");
+        } 
+            
+        }else {
+            System.out.println("Registration failed.Please check your inputs.");
         }
     }
-}
