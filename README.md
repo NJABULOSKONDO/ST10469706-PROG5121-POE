@@ -1,5 +1,4 @@
 # ST10469706-PROG5121-POE
-Njabulo Skondo: ST10469706 (Part 1)
 
 A Java-base registration and login system built for the PROG55121POE
 ## Features
