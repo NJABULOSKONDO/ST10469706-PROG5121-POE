@@ -19,5 +19,7 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
     
-    // Getters and setters
+    public String getUsername(){ return username; }
+    public String getPassword() { return password; }
+    public String getPassword() { return phoneNumber; }
 }
