@@ -47,6 +47,19 @@ public class Message {
         return recipientPhoneNumber;
     }
     
+    // Setters
+    public void markAsSent() {
+        this.isSent = true;
+    }
+    
+    public void markAsReceived() {
+        this.isReceived = true;
+    }
+    
+    public void markAsRead() {
+        this.isRead = true;
+    }
+    
     
     
 }
