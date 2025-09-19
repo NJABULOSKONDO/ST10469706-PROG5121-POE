@@ -30,5 +30,23 @@ public class Message {
         this.isRead = false;
     }
     
+    // Getters
+    public String getMessageText() {
+        return messageText;
+    }
+    
+    public boolean isReceived() {
+        return isReceived;
+    }
+    
+    public boolean isRead() {
+        return isRead;
+    }
+    
+    public String getRecipientPhoneNumber() {
+        return recipientPhoneNumber;
+    }
+    
+    
     
 }
