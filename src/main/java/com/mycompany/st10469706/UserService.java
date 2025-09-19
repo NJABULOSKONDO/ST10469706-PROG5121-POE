@@ -32,7 +32,7 @@ public class UserService {
     public boolean registerUser(String username, String password, String phoneNumber) {
         // You can add phone number validation here too
         return validateUsername(username).contains("successfully")&&
-                validatePassword(password).contains("successfully");
+                validatePassword(password).contains("successfully")&&
                 validatePhoneNumber(phoneNumber).contains("successfully");
     }
     public String validatePhoneNumber(String phoneNumber) {
