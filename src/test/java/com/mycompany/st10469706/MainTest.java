@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author Njabulo Skondo
  */
-public class ST10469706Test {
+public class MainTest {
     
     UserService service = new UserService();
     
