@@ -60,6 +60,14 @@ public class Message {
         this.isRead = true;
     }
     
-    
-    
+    /**
+     * Returns a summary of the message status.
+     */
+    public String getStatusReport() {
+        return "Message: \"" + messageText + "\"\n" +
+                "To: " + recipientPhoneNumber + "\n" +
+                "Sent: " + isSent + "\n" +
+                "Received: " + isReceived + "\n" +
+                "Read: " + isRead;
+    }
 }
