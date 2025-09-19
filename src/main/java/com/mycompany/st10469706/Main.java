@@ -30,7 +30,7 @@ public class Main {
         
         if (service.registerUser(username, password, phone)) {
             System.out.println("Registration Successful!");
-            System.outprintln("Login - Enter username: ");
+            System.out.println("Login - Enter username: ");
             String loginUser = scanner.nextLine();
             System.out.print("Login - Enter password: ");
             String loginPass = scanner.nextLine();
@@ -44,4 +44,5 @@ public class Main {
         }else {
             System.out.println("Registration failed.Please check your inputs.");
         }
-    }
+    }   
+}
