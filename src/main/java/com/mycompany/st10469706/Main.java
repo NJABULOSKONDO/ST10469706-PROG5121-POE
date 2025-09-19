@@ -1,24 +1,19 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
-package com.mycompany.st10469706;
-
 /**
  *
  * @author Njabulo Skondo
  */
-import java.util.Scanner;
+
+package com.mycompany.st10469706;
 
 public class Main {
-
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         UserService service = new UserService();
         
         // Test 1: Valid Username
         System.out.println("Test 1: Valid Username: ");
-        String username = scanner.nextLine();
         System.out.println(service.validateUsername("kyl_1")); // Expected: Success
         
         // Test 2: Invalid Username
@@ -44,7 +39,7 @@ public class Main {
         // Test 7: Registration Success
         System.out.println("Test 7: Registration Success");
         boolean registered = service.registerUser("kyl_1", "Ch&&sec@ke99!", "+27838968976");
-        System.out.println("Registration status: " + registerd); // Expected: false
+        System.out.println("Registration status: " + registered); // Expected: false
         
         // Test 8: Registration Failure
         System.out.println("Test 8: Registration Failure");
@@ -54,10 +49,10 @@ public class Main {
         // Test 9: Message Simulation
         System.out.println("Test 9: Message Simulation");
         Message msgc = new Message("Hello, are you online?", "+27838968976");
-        msg.markAsSent();
-        msge.markAsReceived();
-        msg.markAsRead();
-        System.out.println(msg.getStatusReport());
+        msgc.markAsSent();
+        msgc.markAsReceived();
+        msgc.markAsRead();
+        System.out.println(msgc.getStatusReport());
         
     }
 }
