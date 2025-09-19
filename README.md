@@ -48,6 +48,10 @@ This Java-based application simulates a basic chat system with user registration
 
 ---
 
+## 📚 References
+
+Microsoft. (2025). *Copilot*. Microsoft Corporation. Available at: https://copilot.microsoft.com/ [Accessed 19 Sep. 2025].
+
 ## 📂 How to Run
 1. Clone the repo:
    ```bash
