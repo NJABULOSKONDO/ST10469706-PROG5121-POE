@@ -33,6 +33,7 @@ public class UserService {
         // You can add phone number validation here too
         return validateUsername(username).contains("successfully")&&
                 validatePassword(password).contains("successfully");
+                validatePhoneNumber(phoneNumber).contains("successfully");
     }
     public String validatePhoneNumber(String phoneNumber) {
         if (phoneNumber.matches("0\\d{9}")) {
