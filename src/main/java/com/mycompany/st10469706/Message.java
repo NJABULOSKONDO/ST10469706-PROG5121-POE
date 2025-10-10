@@ -48,4 +48,20 @@ public class Message {
         String last = words[words.length - 1].toUpperCase();
         return messageID.substring(0, 2) + ":" + messageCount + ":" + first + last;
     }
+    
+    public String sentMessage(String choice) {
+        switch (choice.toLowerCase()) {
+            case "send":
+                sentMessages.add(this);
+                totalMessages++;
+                return "Message successfully sent.";
+            case "discard":
+                return "Press 0 to delete message.";
+            case "store":
+                storeMessage();
+                return "Message successfully stored.";
+            default:
+                return "Invalid option.";
+        }
+    }
 }
