@@ -30,7 +30,7 @@ public class Main {
         
         // Test 5: Valid Phone Number
         System.out.print("Test 5: Valid Phone Number");
-        System.out.println(service.validatePhoneNumber("+27838968976")); // Expected: success
+        System.out.println(service.validatePhoneNumber("0838968976")); // Expected: success
         
         // Test 6: Invalid Phone Numver
         System.out.println("Test 6: Invalid Phone Number");
@@ -38,7 +38,7 @@ public class Main {
         
         // Test 7: Registration Success
         System.out.println("Test 7: Registration Success");
-        boolean registered = service.registerUser("kyl_1", "Ch&&sec@ke99!", "+27838968976");
+        boolean registered = service.registerUser("kyl_1", "Ch&&sec@ke99!", "0838968976");
         System.out.println("Registration status: " + registered); // Expected: false
         
         // Test 8: Registration Failure
@@ -48,7 +48,7 @@ public class Main {
         
         // Test 9: Message Simulation
         System.out.println("Test 9: Message Simulation");
-        Message msgc = new Message("Hello, are you online?", "+27838968976");
+        Message msgc = new Message("Hello, are you online?", "0838968976");
         msgc.markAsSent();
         msgc.markAsReceived();
         msgc.markAsRead();

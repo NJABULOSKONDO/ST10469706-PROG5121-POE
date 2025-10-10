@@ -17,7 +17,7 @@ public class MainTest {
     
     @Test
     public void testValidateUsername() {
-        assertEquals("Username succesfully captured.", service.validateUsername("kyl_1"));
+        assertEquals("Username successfully captured.", service.validateUsername("kyl_1"));
     }
     
     @Test
@@ -37,7 +37,7 @@ public class MainTest {
     
     @Test
     public void testValidPhoneNumber() {
-        assertEquals("Phone number successfully captured.", service.validatePhoneNumber("+27838968976"));
+        assertEquals("Phone number successfully captured.", service.validatePhoneNumber("0838968976"));
     }
     
     @Test
@@ -47,7 +47,7 @@ public class MainTest {
     
     @Test
     public void testSuccessfulRegistration() {
-         assertTrue(service.registerUser("kyl_1", "Ch&&sec@ke99!", "+27838968976"));
+         assertTrue(service.registerUser("kyl_1", "Ch&&sec@ke99!", "0838968976"));
 
     }
     
