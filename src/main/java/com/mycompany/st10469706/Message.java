@@ -42,4 +42,10 @@ public class Message {
         return (recipient.length() =< 10 && recipient.startsWith("+")) ? 1:0;
     }
     
+    public String createMessageHash() {
+        String[] words = message.split(" ");
+        String first = words[0].toUpperCase();
+        String last = words[words.length - 1].toUpperCase();
+        return messageID.substring(0, 2) + ":" + messageCount + ":" + first + last;
+    }
 }
