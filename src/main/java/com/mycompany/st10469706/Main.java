@@ -30,16 +30,16 @@ public class Main {
         
         // Test 5: Valid Phone Number
         System.out.print("Test 5: Valid Phone Number");
-        System.out.println(service.validatePhoneNumber("0838968976")); // Expected: success
+        System.out.println(service.validatePhoneNumber("+27838968976")); // Expected: success
         
-        // Test 6: Invalid Phone Numver
+        // Test 6: Invalid Phone Number
         System.out.println("Test 6: Invalid Phone Number");
         System.out.println(service.validatePhoneNumber("08966553")); // Expecteed: error
         
         // Test 7: Registration Success
         System.out.println("Test 7: Registration Success");
-        boolean registered = service.registerUser("kyl_1", "Ch&&sec@ke99!", "0838968976");
-        System.out.println("Registration status: " + registered); // Expected: false
+        boolean registered = service.registerUser("kyl_1", "Ch&&sec@ke99!", "+27838968976");
+        System.out.println("Registration status: " + registered); // Expected: True
         
         // Test 8: Registration Failure
         System.out.println("Test 8: Registration Failure");
@@ -48,11 +48,11 @@ public class Main {
         
         // Test 9: Message Simulation
         System.out.println("Test 9: Message Simulation");
-        Message msgc = new Message("Hello, are you online?", "0838968976");
-        msgc.markAsSent();
-        msgc.markAsReceived();
-        msgc.markAsRead();
-        System.out.println(msgc.getStatusReport());
+        MessageStatus msgc = new MessageStatus("+27838968976", "Hello, are you online?", 1);
+        System.out.println("Recipient Valid: " + msgc.checkRecipientCell()); // Expected: true
+        System.out.println(msgc.sentMessages("send")); // Expected: Message successfully sent.
+        System.out.println("Message Hash: " + msgc.createMessageHash());
+        System.out.println("Total Messages Sent: " + MessageStatus.returnTotalMessage());
         
     }
 }
