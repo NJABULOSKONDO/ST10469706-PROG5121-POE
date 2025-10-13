@@ -14,7 +14,7 @@ import com.google.gson.Gson;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Message {
+public class MessageStatus {
     private String messageID;
     private int messageCount;
     private String recipient;
@@ -25,7 +25,7 @@ public class Message {
     private static List<Message> sentMessages = new ArrayList <>();
     
     // Constructor
-    public Message(String recipient, String message, int messageCount) {
+    public MessageStatusg recipient, String message, int messageCount) {
         this.messageID = generateMessageID();
         this.messageCount = messageCount;
         this.recipient = recipient;
