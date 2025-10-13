@@ -3,7 +3,7 @@
 ## 👨‍💻 Author
 **Njabulo Skondo**  
 Rosebank College – PROG5121 Module  
-GitHub: [NJABULOSKONDO](https://github.com/NJABULOSKONDO)
+GitHub: https://github.com/NJABULOSKONDO/ST10469706-PROG5121-POE/tree/KhanbanTasks
 
 ---
 
