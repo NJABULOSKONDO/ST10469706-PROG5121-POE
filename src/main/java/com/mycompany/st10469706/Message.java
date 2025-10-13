@@ -42,7 +42,7 @@ public class Message {
     }
     
     public int checkRecipientCell() {
-        return (recipient.length() =< 10 && recipient.startsWith("+")) ? 1:0;
+        return (recipient.length() <= 10 && recipient.startsWith("+")) ? 1:0;
     }
     
     public String createMessageHash() {
@@ -78,12 +78,16 @@ public class Message {
     
     public static String printMessage() {
         StringBuilder sb = new StringBuilder();
-        for (Message msg : sentMessage) {
+        for (Message msg : sentMessages) {
             sb.append("MessageID: ").append(msg.messageID).append("\n")
                     .append("Message Hash: ").append(msg.messageHash).append("\n")
                     .append("Recipient: ").append(msg.recipient).append("\n")
                     .append("Message: ").append(msg.message).append("\n\n");
         }
         return sb.toString();
+    }
+    
+    public static int returnTotalMessage() {
+        return totalMessages;
     }
 }
