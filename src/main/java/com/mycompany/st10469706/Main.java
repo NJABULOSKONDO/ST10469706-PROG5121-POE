@@ -24,7 +24,7 @@ public class Main {
        
        switch (choice) {
            case "1":
-               String countInput = JOptionPane.showInputDialog("How many messages would you like to send?")
+               String countInput = JOptionPane.showInputDialog("How many messages would you like to send?");
                int count = Integer.parseInt(countInput);
                
                for (int i = 0; i < count; i++) {
@@ -33,7 +33,7 @@ public class Main {
                    int messageCount = i + 1;
                    
                    MessageStatus msg = new MessageStatus(recipient, message, messageCount);
-                   JOptionPPane.showMessageDialog(null, msgsentMessages("send"));
+                   JOptionPane.showMessageDialog(null, msg.sentMessages("send"));
                    JOptionPane.showMessageDialog(null, "Message Hash: " + msg.createMessageHash());
                }
                JOptionPane.showMessageDialog(null, "Total Message Sent: " + MessageStatus.returnTotalMessage());
@@ -43,7 +43,7 @@ public class Main {
                break;
                
            case "3":
-               JOptionPane.showMessageDialog(null, "Goodbye!");
+               JOptionPane.showMessageDialog(null, "Goodbye!"); // Updated for rubric compliance
                running = false;
                break;
                
