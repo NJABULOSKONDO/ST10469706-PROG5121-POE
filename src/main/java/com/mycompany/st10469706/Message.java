@@ -10,6 +10,9 @@ package com.mycompany.st10469706;
  */
 
 import java.util.*;
+import com.google.gson.Gson;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Message {
     private String messageID;
@@ -62,6 +65,14 @@ public class Message {
                 return "Message successfully stored.";
             default:
                 return "Invalid option.";
+        }
+    }
+    
+    public void storeMessage() {
+        try (FileWriter writer = new FileWriter("storeMessages.json", true)) {
+            new Gson().toJson(this, writer);
+        } catch (IOException e) {
+            System.out.println("Error storing message: " + e.getMessage());
         }
     }
 }
