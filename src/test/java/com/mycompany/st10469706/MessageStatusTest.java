@@ -22,13 +22,13 @@ public class MessageStatusTest {
     @Test
     public void testCheckRecipientCell_Valid() {
         MessageStatus msg = new MessageStatus("+2783123456", "Hi", 1);
-        assertFalse(msg.checkRecipientCell());
+        assertTrue(msg.checkRecipientCell());
     }
     
     @Test
     public void testCheckRecipientCell_Invalid() {
         MessageStatus msg = new MessageStatus("083123456", "Hi", 1);
-        assertEquals(0, msg.checkRecipientCell());
+        assertFalse(new MessageStatus("083123456", "Hi", 1).checkRecipientCell());
     }
     
     @Test

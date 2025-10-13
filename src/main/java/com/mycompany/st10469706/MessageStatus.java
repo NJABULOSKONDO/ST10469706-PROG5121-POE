@@ -35,7 +35,7 @@ public class MessageStatus {
     }
     
     private String generateMessageID() {
-        return String.valueOf(new Random().nextInt(900000000) + 100000000 );
+        return String.valueOf(new Random().nextInt(900000000) + 1000000000); // 10 digits
     }
     
     public boolean checkMessageID() {
