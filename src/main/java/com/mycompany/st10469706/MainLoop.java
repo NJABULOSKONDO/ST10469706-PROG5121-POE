@@ -51,26 +51,26 @@ public class MainLoop {
                     System.out.println(msg.sentMessages("send"));
                     break;
                     
-                Case "2":
+                case "2":
                     System.out.print("Enter recipient number: ");
-                    recipient = Scanner.nextLine();
+                    recipient = scanner.nextLine();
                     
                     System.out.print("Enter message: ");
                     message = scanner.nextLine();
                     
                     MessageStatus msgStore = new MessageStatus(recipient, message, messageCount++);
-                    System.out.println(msgStore.sentMessage("store"));
+                    System.out.println(msgStore.sentMessages("store"));
                     break;
                     
-                Case "3":
+                case "3":
                     System.out.println(MessageStatus.printMessage());
                     break;
                     
-                Case "4": 
+                case "4": 
                     System.out.println("Total messages sent: " + MessageStatus.returnTotalMessage());
                     break;
                     
-                Case "5":
+                case "5":
                     System.out.println("Goodbye!");
                     return;
                 
