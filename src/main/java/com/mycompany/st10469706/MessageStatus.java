@@ -42,8 +42,8 @@ public class MessageStatus {
         return messageID.length() == 10;
     }
     
-    public int checkRecipientCell() {
-        return (recipient.length() <= 10 && recipient.startsWith("+")) ? 1:0;
+    public boolean checkRecipientCell() {
+        return recipient != null && recipient.length() == 12 && recipient.startsWith("+27");
     }
     
     public String createMessageHash() {
