@@ -75,4 +75,15 @@ public class Message {
             System.out.println("Error storing message: " + e.getMessage());
         }
     }
+    
+    public static String printMessage() {
+        StringBuilder sb = new StringBuilder();
+        for (Message msg : sentMessage) {
+            sb.append("MessageID: ").append(msg.messageID).append("\n")
+                    .append("Message Hash: ").append(msg.messageHash).append("\n")
+                    .append("Recipient: ").append(msg.recipient).append("\n")
+                    .append("Message: ").append(msg.message).append("\n\n");
+        }
+        return sb.toString();
+    }
 }
