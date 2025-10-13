@@ -8,51 +8,48 @@
 
 package com.mycompany.st10469706;
 
+import javax.swing.JOptionPane;
+
 public class Main {
     public static void main(String[] args) {
         UserService service = new UserService();
+        boolean running = true;
         
-        // Test 1: Valid Username
-        System.out.println("Test 1: Valid Username: ");
-        System.out.println(service.validateUsername("kyl_1")); // Expected: Success
-        
-        // Test 2: Invalid Username
-        System.out.println("Test 2: Invalid Username");
-        System.out.println(service.validateUsername("kyle!!!!!!!")); // Expected: Success
-        
-        // Test 3: Valid Password
-        System.out.print("Test 3: Valid Password");
-        System.out.println(service.validatePassword("Ch&&sec@ke99!")); // Expected:Success
-        
-        // Test 4: Invalid Password
-        System.out.print("Test 4: Invalid Password");
-        System.out.println(service.validatePassword("password")); // Expected:error
-        
-        // Test 5: Valid Phone Number
-        System.out.print("Test 5: Valid Phone Number");
-        System.out.println(service.validatePhoneNumber("+27838968976")); // Expected: success
-        
-        // Test 6: Invalid Phone Number
-        System.out.println("Test 6: Invalid Phone Number");
-        System.out.println(service.validatePhoneNumber("08966553")); // Expecteed: error
-        
-        // Test 7: Registration Success
-        System.out.println("Test 7: Registration Success");
-        boolean registered = service.registerUser("kyl_1", "Ch&&sec@ke99!", "+27838968976");
-        System.out.println("Registration status: " + registered); // Expected: True
-        
-        // Test 8: Registration Failure
-        System.out.println("Test 8: Registration Failure");
-        boolean failed = service.registerUser("kyle!!!!!!!", "password", "08966553");
-        System.out.println("Registration status: " + failed); // Expected: false
-        
-        // Test 9: Message Simulation
-        System.out.println("Test 9: Message Simulation");
-        MessageStatus msgc = new MessageStatus("+27838968976", "Hello, are you online?", 1);
-        System.out.println("Recipient Valid: " + msgc.checkRecipientCell()); // Expected: true
-        System.out.println(msgc.sentMessages("send")); // Expected: Message successfully sent.
-        System.out.println("Message Hash: " + msgc.createMessageHash());
-        System.out.println("Total Messages Sent: " + MessageStatus.returnTotalMessage());
-        
+    while (running) {
+       String menu = "Welcome to the Message App!\n"
+                   + "1. Add Message\n"
+                   + "2. View Message\n"
+                   + "3. Exit";
+       String choice = JOptionPane.showInputDialog(menu);
+       
+       switch (choice) {
+           case "1":
+               String countInput = JOptionPane.showInputDialog("How many messages would you like to send?")
+               int count = Integer.parseInt(countInput);
+               
+               for (int i = 0; i < count; i++) {
+                   String recipient = JOptionPane.showInputDialog("Enter recipient number (e.g. +27831234567)");
+                   String message = JOptionPane.showInputDialog("Enter your message:");
+                   int messageCount = i + 1;
+                   
+                   MessageStatus msg = new MessageStatus(recipient, message, messageCount);
+                   JOptionPPane.showMessageDialog(null, msgsentMessages("send"));
+                   JOptionPane.showMessageDialog(null, "Message Hash: " + msg.createMessageHash());
+               }
+               JOptionPane.showMessageDialog(null, "Total Message Sent: " + MessageStatus.returnTotalMessage());
+               break;
+           case "2":
+               JOptionPane.showMessageDialog(null, MessageStatus.printMessage());
+               break;
+               
+           case "3":
+               JOptionPane.showMessageDialog(null, "Goodbye!");
+               running = false;
+               break;
+               
+           default:
+               JOptionPane.showMessageDialog(null, "Invalid option. Please choose 1, 2, or 3.");
+       }    
     }
+  }    
 }
