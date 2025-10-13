@@ -21,7 +21,7 @@ public class MessageStatusTest {
     
     @Test
     public void testCheckRecipientCell_Valid() {
-        MessageStatus msg = new MessageStatus("+2783123456", "Hi", 1);
+        MessageStatus msg = new MessageStatus("+27831234567", "Hi", 1);
         assertTrue(msg.checkRecipientCell());
     }
     
