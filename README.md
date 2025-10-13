@@ -52,7 +52,8 @@ This Java-based application simulates a basic chat system with user registration
 
 Microsoft. (2025). *Copilot*. Microsoft Corporation. Available at: https://copilot.microsoft.com/ [Accessed 19 Sep. 2025].
 
-## 📂 How to Run
-1. Clone the repo:
+- GitHub Actions setup guided by:  
+  [Automated Testing with GitHub Actions – YouTube](https://www.youtube.com/watch?v=b3clRsVPLR4&t=2282s)
+
    ```bash
    git clone https://github.com/NJABULOSKONDO/ST10469706-PROG5121-POE.git
