@@ -64,6 +64,9 @@ This Java-based messaging system simulates user registration, message handling, 
    ```
 
 ---
+### ✅ Local Test Verification
+All unit tests passed using Maven Daemon on Windows. See screenshot below for confirmation.
+---
 
 ### 🧾 Reflection  
 This project challenged me to integrate validation logic, parallel arrays, and search algorithms while maintaining clean code and test coverage. I resolved merge conflicts, automated test runs, and verified behavior using both GitHub Actions and Maven Daemon. The experience sharpened my skills in systems analysis, CI/CD, and professional documentation.
