@@ -17,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class MainTest {
     
+    // Trigger rebuild to clear List symbol error
     UserService service = new UserService();
     
     @Test
