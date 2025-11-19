@@ -20,8 +20,8 @@ public class UserService {
     private List<MessageStatus> sentMessages = new ArrayList<>();
     private List<MessageStatus> storedMessages = new ArrayList<>();
     private List<MessageStatus> disregardedMessages = new ArrayList<>();
-    private List<MessageStatus> messageHashes = new ArrayList<>();
-    private List<MessageStatus> messageIDs = new ArrayList<>();
+    private List<String> messageHashes = new ArrayList<>();
+    private List<String> messageIDs = new ArrayList<>();
     
    // Username must contain underscore and be <= 5 characters
     public String validateUsername(String username) {
