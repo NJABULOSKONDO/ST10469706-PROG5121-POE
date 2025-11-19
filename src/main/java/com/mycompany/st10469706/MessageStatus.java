@@ -90,5 +90,17 @@ public class MessageStatus {
     
     public static int returnTotalMessage() {
         return totalMessages;
+        
+    }
+    public String getMessageID() {
+    return messageID;
+}
+
+    public String getRecipient() {
+    return recipient;
+    }
+
+    public String getMessage() {
+    return message;
     }
 }
