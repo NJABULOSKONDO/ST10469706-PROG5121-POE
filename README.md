@@ -3,7 +3,7 @@
 ## 👨‍💻 Author
 **Njabulo Skondo**  
 Rosebank College – PROG5121 Module  
-GitHub: [NJABULOSKONDO](https://github.com/NJABULOSKONDO)
+GitHub: https://github.com/NJABULOSKONDO/ST10469706-PROG5121-POE/tree/KhanbanTasks
 
 ---
 
@@ -72,3 +72,8 @@ AI tools were used ethically to:
 
 
 
+- GitHub Actions setup guided by:  
+  [Automated Testing with GitHub Actions – YouTube](https://www.youtube.com/watch?v=b3clRsVPLR4&t=2282s)
+
+   ```bash
+   git clone https://github.com/NJABULOSKONDO/ST10469706-PROG5121-POE.git

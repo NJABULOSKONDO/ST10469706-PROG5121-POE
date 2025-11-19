@@ -24,6 +24,7 @@ public class Main {
        
        switch (choice) {
            case "1":
+
                String countInput = JOptionPane.showInputDialog("How many messages would you like to send?");
                int count = Integer.parseInt(countInput);
                

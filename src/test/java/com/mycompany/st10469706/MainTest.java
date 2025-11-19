@@ -56,3 +56,54 @@ public class MainTest {
         assertFalse(service.registerUser("kyle!!!!!!!","password","08966553"));
     }
 }
+
+@Test
+public void testSentMessagesArray() {
+    UserService service = new UserService();
+    MessageStatus msg1 = new MessageStatus("+27834557896", "Did you get the cake?", 1);
+    MessageStatus msg4 = new MessageStatus("0838884567", "It is dinner time!", 4);
+    service.processMessage(msg1, "sent");
+    service.processMessage(msg4, "sent");
+
+    assertEquals("Did you get the cake?", service.searchByMessageID(msg1.getMessageID()).split("\n")[1].replace("Message: ", ""));
+    assertEquals("It is dinner time!", service.searchByMessageID(msg4.getMessageID()).split("\n")[1].replace("Message: ", ""));
+}
+
+@Test
+public void testLongestMessage() {
+    UserService service = new UserService();
+    service.processMessage(new MessageStatus("+27834557896", "Did you get the cake?", 1), "sent");
+    service.processMessage(new MessageStatus("+27838884567", "Where are you? You are late! I have asked you to be on time.", 2), "sent");
+
+    assertEquals("Where are you? You are late! I have asked you to be on time.", service.getLongestMessage());
+}
+
+@Test
+public void testSearchByMessageID() {
+    UserService service = new UserService();
+    MessageStatus msg = new MessageStatus("0838884567", "It is dinner time!", 4);
+    service.processMessage(msg, "sent");
+
+    assertTrue(service.searchByMessageID(msg.getMessageID()).contains("It is dinner time!"));
+}
+
+@Test
+public void testSearchByRecipient() {
+    UserService service = new UserService();
+    service.processMessage(new MessageStatus("+27838884567", "Where are you? You are late! I have asked you to be on time.", 2), "sent");
+    service.processMessage(new MessageStatus("+27838884567", "Ok, I am leaving without you.", 5), "stored");
+
+    List<String> results = service.searchByRecipient("+27838884567");
+    assertTrue(results.contains("Where are you? You are late! I have asked you to be on time."));
+    assertTrue(results.contains("Ok, I am leaving without you."));
+}
+
+@Test
+public void testDeleteByHash() {
+    UserService service = new UserService();
+    MessageStatus msg = new MessageStatus("+27838884567", "Where are you? You are late! I have asked you to be on time.", 2);
+    service.processMessage(msg, "sent");
+
+    String result = service.deleteByHash(msg.createMessageHash());
+    assertEquals("Message \"Where are you? You are late! I have asked you to be on time.\" successfully deleted.", result);
+}
