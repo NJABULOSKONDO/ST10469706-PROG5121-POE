@@ -53,7 +53,6 @@ public class MainTest {
     @Test
     public void testSuccessfulRegistration() {
          assertTrue(service.registerUser("kyl_1", "Ch&&sec@ke99!", "0838968976"));
-
     }
     
     @Test

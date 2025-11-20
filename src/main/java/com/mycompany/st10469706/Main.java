@@ -19,7 +19,9 @@ public class Main {
        String menu = "Welcome to the Message App!\n"
                    + "1. Add Message\n"
                    + "2. View Message\n"
-                   + "3. Exit";
+                   + "3. Exit\n"
+                   + "4. Discard Message";
+       
        String choice = JOptionPane.showInputDialog(menu);
        
        switch (choice) {
@@ -47,6 +49,15 @@ public class Main {
                JOptionPane.showMessageDialog(null, "Goodbye!"); // Updated for rubric compliance
                running = false;
                break;
+               
+            case "4": // Discard Message
+                String recipientDiscard = JOptionPane.showInputDialog("Enter recipient number (e.g. +27831234567)");
+                String messageDiscard = JOptionPane.showInputDialog("Enter your message to discard:");
+                int discardCount = MessageStatus.returnTotalMessage() + 1;
+
+                MessageStatus discardMsg = new MessageStatus(recipientDiscard, messageDiscard, discardCount);
+                JOptionPane.showMessageDialog(null, discardMsg.sentMessages("discard"));
+                break;
                
            default:
                JOptionPane.showMessageDialog(null, "Invalid option. Please choose 1, 2, or 3.");

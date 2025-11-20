@@ -32,10 +32,11 @@ public class MainLoop {
         while (true) {
             System.out.println("\nMenu:");
             System.out.println("1. Send Message");
-            System.out.println("2. Print All Messages");
+            System.out.println("2. Store Message");
             System.out.println("3. Print All Messages");
             System.out.println("4. Show Total Sent");
             System.out.println("5. Exit");
+            System.out.println("6. Discard Message");
             System.out.print("Choose an option: ");
             String choice = scanner.nextLine();
             
@@ -73,6 +74,16 @@ public class MainLoop {
                 case "5":
                     System.out.println("Goodbye!");
                     return;
+                    
+                case "6": // Discard Message
+                    System.out.print("Enter recipient number: ");
+                    String recipientDiscard = scanner.nextLine();
+                    System.out.print("Enter message to discard: ");
+                    String messageDiscard = scanner.nextLine();
+
+                    MessageStatus discardMsg = new MessageStatus(recipientDiscard, messageDiscard, messageCount++);
+                    System.out.println(discardMsg.sentMessages("discard"));
+                    break;
                 
                 default:
                     System.out.println("Invalid option. Try again.");
