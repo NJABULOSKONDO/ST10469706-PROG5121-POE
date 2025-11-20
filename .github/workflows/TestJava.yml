@@ -2,13 +2,12 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ KhanbanTasks ]
+    branches: [ main, KhanbanTasks ]
   pull_request:
-    branches: [ KhanbanTasks ]
+    branches: [ main ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
