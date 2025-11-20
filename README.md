@@ -72,3 +72,11 @@ This project challenged me to integrate validation logic, parallel arrays, and s
 ---
 ### ✅ Local Test Verification
 All unit tests passed using Maven Daemon on Windows. See screenshot below for confirmation.
+
+---
+
+## Attribution
+
+This project was developed by **Njabulo Skondo** as part of the PROG5121 PoE.  
+Some tasks — including unit test design, GitHub Actions workflow setup, and troubleshooting Maven builds — were assisted by **Microsoft Copilot (ChatGPT)**.  
+All code was verified, tested, and finalized by the author before submission.
