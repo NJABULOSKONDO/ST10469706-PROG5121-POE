@@ -1,79 +1,71 @@
-# ST10469706-PROG5121-POE – Registration & Messaging System
-
-## 👨‍💻 Author
-**Njabulo Skondo**  
-Rosebank College – PROG5121 Module  
-GitHub: https://github.com/NJABULOSKONDO/ST10469706-PROG5121-POE/tree/KhanbanTasks
-
----
-
-## Project Overview
-This Java-based console application simulates a basic chat system with user registration, login, and message delivery features. It was built as part of the PROG5121 PoE to demonstrate clean, testable, and scalable code using object-oriented programming principles.
-
-The project was expanded in **Part 2** to include message hashing, JSON-based storage using Gson, and a console-based menu loop for sending, storing, and printing messages.
+## 📘 ST10469706 PROG5121 PoE Part 3  
+**Developer:** Njabulo Skondo  
+**Course:** Bachelor of IT in Business Systems  
+**Institution:** Rosebank College  
+**Semester:** 2025 Second Semester  
 
 ---
 
-## Features
-
-### Registration & Login (Part 1)
-- **Username validation**: Must contain an underscore and be ≤ 5 characters.
-- **Password complexity**: Requires 8+ characters, a capital letter, a number, and a special character.
-- **Phone number validation**: Must include international code (`+27`) and be exactly 12 characters.
-- **Login simulation**: Verifies credentials and returns a personalized welcome message.
-
-### Message Payload (Part 1)
-- Stores message content and recipient phone number.
-- Tracks delivery status: `isSent`, `isReceived`, `isRead`.
-- Includes methods to update status and generate a message report.
-
-### MessageStatus & Console Menu (Part 2)
-- **Message ID generation**: Each message gets a unique 10-digit ID.
-- **Hashing**: Messages are hashed using a custom format for tracking.
-- **Storage**: Messages can be stored in a JSON file using Gson.
-- **Console Menu**: Users can send, store, print, and count messages via a looped menu.
-- **Validation**: Recipient numbers are validated to start with `+` and be ≤ 10 characters.
+### 🧠 Project Overview  
+This Java-based messaging system simulates user registration, message handling, and reporting. It demonstrates string manipulation, array operations, and unit testing using JUnit. The application supports message categorization, search, deletion, and automated reporting — all verified through GitHub Actions and Maven Daemon.
 
 ---
 
-## Class Structure
-
-| Class            | Purpose |
-|------------------|---------|
-| `User`           | Stores user credentials and phone number |
-| `UserService`    | Validates input and handles registration logic |
-| `Message`        | Represents a chat message with status flags (Part 1) |
-| `MessageStatus`  | Handles message ID generation, hashing, storing, and tracking (Part 2) |
-| `Main`           | Simulates user interaction and manual testing |
-| `MainLoop`       | Console-based menu loop for sending, storing, and printing messages (Part 2) |
+### 🧩 Key Features  
+- ✅ **User Registration Validation**  
+  - Username, password, and phone number format checks  
+- ✅ **Message Categorization**  
+  - Sent, Stored, Disregarded messages stored in parallel arrays  
+- ✅ **Message Operations**  
+  - Search by message ID  
+  - Search by recipient  
+  - Delete by message hash  
+  - Display longest message  
+  - Generate full message report  
+- ✅ **JSON Integration**  
+  - Stored messages loaded from JSON using Gson  
+- ✅ **Unit Testing**  
+  - 17 JUnit tests covering all core features  
+- ✅ **CI/CD Automation**  
+  - GitHub Actions workflow runs tests on every push  
 
 ---
 
-## JUnit Testing
+### 🧪 Test Data Used  
+| Recipient | Message | Flag |
+|-----------|---------|------|
+| +27834557896 | "Did you get the cake?" | Sent |
+| +27838884567 | "Where are you? You are late! I have asked you to be on time." | Stored |
+| +27834484567 | "Yohoooo, I am at your gate." | Disregard |
+| 0838884567 | "It is dinner time!" | Sent |
+| +27838884567 | "Ok, I am leaving without you." | Stored |
 
-Unit tests were written for key methods in `MessageStatus`:
+---
 
-- `checkMessageID()`
-- `checkRecipientCell()`
-- `createMessageHash()`
+### 🛠 Technologies Used  
+- Java 17  
+- Maven Daemon (mvnd)  
+- JUnit 5  
+- Git & GitHub  
+- GitHub Actions  
+- Gson (for JSON parsing)
 
-## Tests are located in:
-src/test/java/com/mycompany/st10469706/MessageStatusTest.java
+---
 
-## References
-Microsoft. (2025). Copilot. Microsoft Corporation. Available at: https://copilot.microsoft.com/ [Accessed 19 Sep. 2025].
-
-## AI Integration
-AI tools were used ethically to:
-- Generate regex for phone number validation
-- Structure clean, maintainable classes
-- Guide Git workflow and testing strategy
-- Troubleshoot Maven, Gson, and NetBeans integration
-
-
-
-- GitHub Actions setup guided by:  
-  [Automated Testing with GitHub Actions – YouTube](https://www.youtube.com/watch?v=b3clRsVPLR4&t=2282s)
-
+### 🚀 How to Run Locally  
+1. Clone the repo:  
    ```bash
    git clone https://github.com/NJABULOSKONDO/ST10469706-PROG5121-POE.git
+   ```
+2. Navigate to project folder  
+3. Run tests using Maven Daemon:  
+   ```bash
+   mvnd clean test
+   ```
+---
+
+### 🧾 Reflection  
+This project challenged me to integrate validation logic, parallel arrays, and search algorithms while maintaining clean code and test coverage. I resolved merge conflicts, automated test runs, and verified behavior using both GitHub Actions and Maven Daemon. The experience sharpened my skills in systems analysis, CI/CD, and professional documentation.
+---
+### ✅ Local Test Verification
+All unit tests passed using Maven Daemon on Windows. See screenshot below for confirmation.

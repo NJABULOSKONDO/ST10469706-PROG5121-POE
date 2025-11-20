@@ -109,7 +109,7 @@ public class UserService {
                 .orElse("No messages found.");
     }
 
- // Search by message ID
+    // Search by message ID
     public String searchByMessageID(String id) {
         for (MessageStatus msg : sentMessages) {
             if (msg.getMessageID().equals(id)) {

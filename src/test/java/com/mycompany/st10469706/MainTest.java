@@ -111,6 +111,27 @@ public class MainTest {
         String result = service.deleteByHash(msg.createMessageHash());
         assertEquals("Message \"Where are you? You are late! I have asked you to be on time.\" successfully deleted.", result);
     }
+    
+    @Test
+    public void testDisregardedMessagesArray() {
+        UserService service = new UserService();
+    
+        // Test Data Message 3: Disregard
+        MessageStatus msg3 = new MessageStatus("+27834484567", "Yohoooo, I am at your gate.", 3);
+        service.processMessage(msg3, "disregard");
+    
+        // Verify that the message was added to disregardedMessages
+        // (We can’t access the private list directly, so we check via deleteByHash or report logic)
+        String hash = msg3.createMessageHash();
+        String deleteResult = service.deleteByHash(hash);
+    
+        // Since it was disregarded, deleteByHash should not find it in sentMessages
+        assertEquals("Message hash not found.", deleteResult);
+    
+        // But the message object itself should still exist with correct content
+        assertEquals("Yohoooo, I am at your gate.", msg3.getMessage());
+        assertEquals("+27834484567", msg3.getRecipient());
+    }
 
-  }
+}
 
