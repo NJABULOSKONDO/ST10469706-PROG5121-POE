@@ -39,4 +39,20 @@ public class MessageStatusTest {
         assertTrue(hash.contains("HELLOWORLD"));
     }
     
+    @Test
+    public void testDisregardMessage() {
+        // Message 3: "Yohoooo, I am at your gate." Should be  disregarded
+        MessageStatus msg = new MessageStatus("+27831234567", "Yohoooo, I am at your gate.", 3);
+        
+        // Process as disregarded
+        UserService service = new UserService();
+        service.processMessage(msg, "disregard");
+        
+        // Assert that it is NOT in sentMessages
+        assertFalse(service.searchByRecipient("+27831234567").contains("Yohoooo, I am at your gate."));
+        
+        // Assert that it IS in disregardMessages (via getter method call)
+        assertTrue(service.getDisregardedMessages().contains(msg));
+    }
+    
 }

@@ -162,4 +162,9 @@ public class UserService {
             System.out.println();
         }
     }
+    
+    // Getter for disregarded messages (used in unit tests)
+    public List<MessageStatus> getDisregardedMessages() {
+    return disregardedMessages;
+    }
 }
