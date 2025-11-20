@@ -13,6 +13,9 @@ package com.mycompany.st10469706;
 import java.util.*;
 import java.io.*;
 import com.google.gson.Gson;
+import java.io.FileReader;
+import java.io.Reader;
+import java.io.IOException;
 import com.google.gson.reflect.TypeToken;
 
 public class UserService {
@@ -83,12 +86,14 @@ public class UserService {
         }
     }
 
-    // Read stored messages from JSON
+    // Code for reading JSON into storeMessages array was assisted by ChatGPT
     public void loadStoredMessages() {
         try (Reader reader = new FileReader("storeMessages.json")) {
-            storedMessages = new Gson().fromJson(reader, new TypeToken<List<MessageStatus>>(){}.getType());
+            Gson gson = new Gson();
+            // Option 2: Directly into a List
+            storedMessages = gson.fromJson(reader, new TypeToken<List<MessageStatus>>(){}.getType());
         } catch (IOException e) {
-            System.out.println("Error reading stored messages: " + e.getMessage());
+           e.printStackTrace();
         }
     }
 
