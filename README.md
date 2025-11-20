@@ -1,4 +1,7 @@
-## 📘 ST10469706 PROG5121 PoE Part 3  
+## 📘 # ST10469706-PROG5121-POE Part 3
+
+![Java CI](https://github.com/NJABULOSKONDO/ST10469706-PROG5121-POE/actions/workflows/TestJava.yml/badge.svg)
+ 
 **Developer:** Njabulo Skondo  
 **Course:** Bachelor of IT in Business Systems  
 **Institution:** Rosebank College  
